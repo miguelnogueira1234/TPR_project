@@ -1,0 +1,45 @@
+
+correr wsl
+
+- criar .txt com samples
+		python3 basePktSampling.py -i yt-1.pcapng -f 3 -c 10.8.0.0/24 -s 0.0.0.0/0 -o output_yt_1.txt
+		python3 basePktSampling.py -i browsing_abola.pcapng -f 3 -c 10.8.0.0/24 -s 0.0.0.0/0 -o output_browsing_abola.txt
+		python3 basePktSampling.py -i bigFile_4file_nosleep_split_1.pcapng -f 3 -c 10.8.0.0/24 -s 0.0.0.0/0 -o output_bigFile_split_1.txt
+		python3 basePktSampling.py -i smallfile_10file_sleep_exporand.pcapng -f 3 -c 10.8.0.0/24 -s 0.0.0.0/0 -o output_smallFile_exporand.txt	
+		python3 basePktSampling.py -i anomalia.pcapng -f 3 -c 10.8.0.0/24 -s 0.0.0.0/0 -o anomalia.txt
+
+- criar pastas obs
+		python3 baseObsWindows.py -i output_yt_1.txt -m 2 -w 5 -s 2
+		python3 baseObsWindows.py -i output_bigFile_split_1.txt -m 2 -w 5 -s 2
+		python3 baseObsWindows.py -i output_browsing_abola.txt -m 2 -w 5 -s 2
+		python3 baseObsWindows.py -i output_smallFile_exporand.txt -m 2 -w 5 -s 2
+		python3 baseObsWindows.py -i anomalia.txt -m 2 -w 5 -s 2
+
+- observar metricas
+		python3 baseExtractFeatures_Remastered.py -i output_bigFile_split_1_obs_s2_m2 -w 5
+		python3 baseExtractFeatures_Remastered.py -i output_browsing_abola_obs_s2_m2 -w 5
+		python3 baseExtractFeatures_Remastered.py -i output_smallFile_exporand_obs_s2_m2 -w 5
+		python3 baseExtractFeatures_Remastered.py -i output_yt_1_obs_s2_m2 -w 5
+		python3 baseExtractFeatures_Remastered.py -i anomalia_obs_s2_m2 -w 5
+
+- observar time dependent com silence
+		python3 baseExtractFeatures_Remastered.py -i output_bigFile_split_1_obs_s2_m2 -w 5 -o bigFile_obs_sil_features.dat
+		python3 baseExtractFeatures_Remastered.py -i output_browsing_abola_obs_s2_m2 -w 5 -o Browsing_obs_sil_features.dat
+		python3 baseExtractFeatures_Remastered.py -i output_smallFile_exporand_obs_s2_m2 -w 5 -o smallFile_obs_sil_features.dat
+		python3 baseExtractFeatures_Remastered.py -i output_yt_1_obs_s2_m2 -w 5 -o YouTube_obs_sil_features.dat
+		python3 baseExtractFeatures_Remastered.py -i output_yt_1_obs_s2_m2 -w 5 -o Anomalia_obs_sil_features.dat
+
+
+- observar periodicidade -> resultado é um ficheiro com per
+		python3 basePeriodicity.py -i output_bigFile_split_1_obs_s2_m2 -w 5
+		python3 basePeriodicity.py -i output_browsing_abola_obs_s2_m2 -w 5
+		python3 basePeriodicity.py -i output_smallFile_exporand_obs_s2_m2 -w 5
+		python3 basePeriodicity.py -i output_yt_1_obs_s2_m2 -w 5	
+		python3 basePeriodicity.py -i anomalia_obs_s2_m2 -w 5
+
+
+
+
+correr powershell vscode
+
+	python3 load.py

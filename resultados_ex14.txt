@@ -1,0 +1,666 @@
+-- Anomaly Detection based on One Class Support Vector Machines (PCA Features) --
+Obs:  0 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs:  1 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs:  2 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs:  3 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs:  4 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs:  5 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs:  0 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs:  1 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs:  2 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs:  3 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs:  4 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs:  5 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs:  6 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK        
+Obs:  7 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK        
+Obs:  8 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs:  9 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 10 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 11 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 12 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs: 13 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs: 14 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs: 15 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs: 16 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs: 17 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs: 18 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs: 19 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK        
+Obs: 20 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 21 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 22 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 23 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 24 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 25 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK        
+Obs: 26 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK        
+Obs: 27 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 28 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 29 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 30 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 31 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 32 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 33 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 34 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 35 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 36 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 37 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 38 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 39 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 40 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 41 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 42 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 43 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 44 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 45 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 46 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 47 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 48 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 49 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 50 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 51 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 52 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 53 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 54 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 55 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 56 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 57 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 58 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 59 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 60 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 61 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 62 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 63 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 64 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 65 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 66 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 67 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 68 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 69 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 70 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 71 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 72 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 73 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 74 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 75 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 76 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 77 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 78 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 79 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 80 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 81 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 82 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 83 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 84 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 85 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 86 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 87 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 88 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 89 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 90 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 91 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 92 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 93 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 94 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 95 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 96 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 97 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 98 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 99 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 100 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 101 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 102 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 103 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 104 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 105 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 106 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 107 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 108 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 109 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 110 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 111 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 112 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 113 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly   
+Obs: 114 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 115 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 116 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 117 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 118 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 119 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 120 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 121 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 122 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 123 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 124 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 125 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 126 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 127 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 128 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 129 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 130 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 131 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 132 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 133 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 134 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 135 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 136 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 137 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 138 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 139 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 140 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 141 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 142 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 143 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 144 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 145 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 146 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 147 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 148 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 149 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 150 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 151 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 152 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 153 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 154 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 155 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 156 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 157 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 158 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 159 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 160 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 161 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 162 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 163 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 164 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 165 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 166 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 167 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 168 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 169 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 170 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 171 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 172 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 173 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 174 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 175 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 176 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 177 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 178 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 179 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 180 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 181 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 182 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 183 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 184 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 185 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 186 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 187 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 188 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly   
+Obs: 189 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 190 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 191 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 192 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 193 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 194 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 195 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 196 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 197 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 198 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 199 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 200 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 201 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 202 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 203 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 204 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 205 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 206 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 207 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 208 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 209 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 210 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 211 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 212 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 213 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 214 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 215 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 216 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 217 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 218 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 219 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 220 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 221 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 222 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 223 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 224 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 225 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 226 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 227 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 228 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 229 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 230 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 231 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 232 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 233 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 234 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 235 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 236 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 237 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 238 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 239 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 240 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 241 (YouTube ): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 242 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 243 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 244 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 245 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 246 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 247 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 248 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 249 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 250 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 251 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 252 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 253 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 254 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 255 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 256 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 257 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 258 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 259 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 260 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 261 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 262 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 263 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 264 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 265 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 266 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 267 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 268 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 269 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 270 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 271 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 272 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 273 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 274 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 275 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 276 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 277 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 278 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 279 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 280 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 281 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 282 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 283 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 284 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 285 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 286 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 287 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 288 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 289 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 290 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 291 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 292 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 293 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 294 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 295 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 296 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 297 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 298 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 299 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 300 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 301 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 302 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 303 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 304 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 305 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 306 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 307 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 308 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 309 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 310 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 311 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 312 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 313 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 314 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 315 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 316 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 317 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 318 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 319 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 320 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 321 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 322 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 323 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 324 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 325 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 326 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 327 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 328 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 329 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 330 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 331 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 332 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 333 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 334 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 335 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 336 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 337 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 338 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 339 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 340 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 341 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 342 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 343 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 344 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 345 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 346 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 347 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 348 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 349 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 350 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 351 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 352 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 353 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 354 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 355 (YouTube ): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 356 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 357 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 358 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 359 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 360 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 361 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 362 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 363 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 364 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 365 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 366 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 367 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 368 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 369 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 370 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 371 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 372 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 373 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 374 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 375 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 376 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 377 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 378 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 379 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 380 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 381 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 382 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 383 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 384 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 385 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 386 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 387 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 388 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 389 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 390 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 391 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 392 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 393 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 394 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 395 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 396 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 397 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 398 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 399 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 400 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 401 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 402 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 403 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 404 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 405 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 406 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 407 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 408 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 409 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 410 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 411 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 412 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 413 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 414 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 415 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 416 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 417 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 418 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 419 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 420 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 421 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 422 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 423 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 424 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 425 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 426 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 427 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 428 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 429 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 430 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 431 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 432 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 433 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 434 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 435 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 436 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 437 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 438 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 439 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 440 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 441 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 442 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 443 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 444 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 445 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 446 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 447 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 448 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 449 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 450 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 451 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 452 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 453 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 454 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 455 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 456 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 457 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 458 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 459 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 460 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 461 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 462 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 463 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 464 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 465 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 466 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 467 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 468 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 469 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 470 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 471 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 472 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 473 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 474 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 475 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 476 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 477 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 478 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 479 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 480 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 481 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 482 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 483 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 484 (Browsing): Kernel Linear->OK         | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 485 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 486 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 487 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 488 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 489 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 490 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 491 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 492 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 493 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 494 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 495 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 496 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 497 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 498 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 499 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 500 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 501 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 502 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 503 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 504 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 505 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 506 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 507 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 508 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 509 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 510 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 511 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 512 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 513 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 514 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 515 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 516 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 517 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 518 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 519 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 520 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 521 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 522 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 523 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 524 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 525 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 526 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 527 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 528 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 529 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 530 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 531 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 532 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 533 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 534 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 535 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 536 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 537 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 538 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 539 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 540 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 541 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 542 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 543 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 544 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 545 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 546 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 547 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 548 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 549 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->Anomaly
+Obs: 550 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 551 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 552 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 553 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 554 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 555 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 556 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 557 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 558 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 559 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 560 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 561 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 562 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 563 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 564 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 565 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 566 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK        
+Obs: 567 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 568 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 569 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 570 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 571 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 572 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 573 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 574 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 575 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 576 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 577 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 578 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 579 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 580 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 581 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 582 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->OK
+Obs: 583 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 584 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 585 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 586 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->OK         | Kernel Poly->Anomaly
+Obs: 587 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 588 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 589 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 590 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 591 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 592 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 593 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 594 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 595 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 596 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 597 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 598 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 599 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 600 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 601 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 602 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 603 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 604 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 605 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 606 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 607 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 608 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 609 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 610 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 611 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 612 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 613 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 614 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 615 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 616 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 617 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 618 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 619 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 620 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 621 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 622 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 623 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 624 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 625 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 626 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 627 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 628 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 629 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 630 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 631 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 632 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 633 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 634 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 635 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 636 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 637 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 638 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 639 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 640 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 641 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 642 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 643 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 644 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 645 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 646 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 647 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 648 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 649 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 650 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 651 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 652 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 653 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 654 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 655 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 656 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 657 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
+Obs: 658 (Browsing): Kernel Linear->Anomaly    | Kernel RBF->Anomaly    | Kernel Poly->OK
